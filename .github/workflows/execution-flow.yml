@@ -28,9 +28,10 @@ jobs:
         id: cache
         uses: actions/cache@v3
         with:
-          path: ~/.npm
+          path: node_module
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Test code
         id: testID
@@ -81,4 +82,4 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Generate report
-        run: echo 'Something i wrong'
+        run: echo 'Something went wrong'
