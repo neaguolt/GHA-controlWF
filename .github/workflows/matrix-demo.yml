@@ -8,12 +8,12 @@ jobs:
       matrix:
         node-v: [12,18,20] 
         os-v: [ubuntu-latest, windows-latest]
-      include:
-        - node-v: 16
-        - os-v: ubuntu-latest
-      exclude:
-        - node-v: 12
-        - os-v: windows-latest
+        include:
+          - node-v: 16
+          - os-v: ubuntu-latest
+        exclude:
+          - node-v: 12
+          - os-v: windows-latest
     runs-on: ${{ matrix.os-v }}
     steps:
           - name: Get Code
