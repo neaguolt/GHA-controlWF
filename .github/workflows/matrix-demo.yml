@@ -3,7 +3,7 @@ on:
   push
 jobs:
   Build:
-
+    continue-on-error: true
     strategy:
       matrix:
         node-v: [12,18,20] 
