@@ -72,7 +72,7 @@ jobs:
     with:
       artifact-name: dist-files
       secrets:
-        user-name: ${{ secrets.reusesecret }}
+        user-name: ${{ secrets.REUSESECRET }}
   report:
     needs: [lint, deploy]
     if: failure()
