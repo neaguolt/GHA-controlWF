@@ -12,6 +12,8 @@ on:
         required: true
 jobs:
   reuse-deploy:
+    env:
+          USER_NAME: 'Dog'
     runs-on: ubuntu-latest
     steps:
       - name: Get Files
@@ -22,8 +24,6 @@ jobs:
         run: ls
       - name: Check user-name
         run: echo "Checking user-name"
-        env:
-          USER_NAME: 'Dog'
       - name: List  
         run: echo ${{ env.USER_NAME }}
       - name: Deploy Files
