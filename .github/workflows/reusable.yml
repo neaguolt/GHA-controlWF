@@ -19,7 +19,7 @@ jobs:
     env:
           USER_NAME: 'Dog'
     outputs:
-      outcome: ${{ steps.set-result.ouputs.step-result }}
+      outcome: ${{ steps.set-result.outputs.step-result }}
     runs-on: ubuntu-latest
     steps:
       - name: Get Files
