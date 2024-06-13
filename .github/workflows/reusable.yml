@@ -23,9 +23,8 @@ jobs:
       - name: Check user-name
         run: echo "Checking user-name"
         env:
-          USER_NAME: ${{ secrets.user-name }}
-      - name: List secret
-        if:  env.USER_NAME == 'mihai' 
-        run: echo 'Found user-name  mihai'
+          USER_NAME: 'Dog'
+      - name: List  
+        run: echo ${{ env.USER_NAME }}
       - name: Deploy Files
         run:  echo 'Deploying ... ...'
