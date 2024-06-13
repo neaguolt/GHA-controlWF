@@ -22,5 +22,8 @@ jobs:
         run: ls
       - name: Set user-name environment variable
         run: echo "USER_NAME=${{ secrets.user-name }}" >> $GITHUB_ENV
+      - name: List secret
+        if: ${{ env.USER_NAME == 'mihai' }}
+        run: echo 'Found user-name: mihai'
       - name: Deploy Files
         run:  echo 'Deploying ... ...'
