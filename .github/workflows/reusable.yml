@@ -20,10 +20,12 @@ jobs:
           name: ${{ inputs.artifact-name }}
       - name: List files
         run: ls
-      - name: Set user-name environment variable
-        run: echo "USER_NAME=${{ secrets.user-name }}" >> $GITHUB_ENV
+      - name: Check user-name
+        run: echo "Checking user-name"
+        env:
+          USER_NAME: ${{ secrets.user-name }}
       - name: List secret
-        if: ${{ env.USER_NAME == 'lmihai' }}
-        run: echo 'Found user-name lmihai'
+        if:  env.USER_NAME == 'mihai' 
+        run: echo 'Found user-name: mihai'
       - name: Deploy Files
         run:  echo 'Deploying ... ...'
