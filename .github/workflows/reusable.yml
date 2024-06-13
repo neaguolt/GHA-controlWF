@@ -21,7 +21,7 @@ jobs:
       - name: List files
         run: ls
       - name: List secret
-        if: ${{ secrets.user-name == 'mihai' }}
+        if: ${{ secrets['user-name'] == 'mihai' }}
         run: echo 'Found user-name  mihai '
       - name: Deploy Files
         run:  echo 'Deploying ... ...'
