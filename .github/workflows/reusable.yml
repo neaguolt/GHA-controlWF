@@ -10,10 +10,16 @@ on:
     secrets:
       user-name:
         required: true
+    outputs:
+      result:
+        description: The result of deploying files
+        value: ${{ jobs.reuse-deploy.outputs.outcome }}
 jobs:
   reuse-deploy:
     env:
           USER_NAME: 'Dog'
+    outputs:
+      outcome: ${{ steps.set-result.ouputs.step-result }}
     runs-on: ubuntu-latest
     steps:
       - name: Get Files
@@ -28,3 +34,6 @@ jobs:
         run: echo ${{ env.USER_NAME }}
       - name: Deploy Files
         run:  echo 'Deploying ... ...'
+      - name: Set Deploying result
+        id: set-result
+        run: echo "step-result= success" >> $GITHUB_OUTPUT
