@@ -10,10 +10,10 @@ jobs:
         os-v: [ubuntu-latest, windows-latest]
         include:
           - node-v: 16
-          - os-v: ubuntu-latest
+            os-v: ubuntu-latest
         exclude:
           - node-v: 12
-          - os-v: windows-latest
+            os-v: windows-latest
     runs-on: ${{ matrix.os-v }}
     steps:
           - name: Get Code
