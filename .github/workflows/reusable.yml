@@ -1,0 +1,8 @@
+name: Reusable Workflow
+on: workflow_call
+jobs:
+  reuse-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Files
+        run:  echo 'Deploying ... ...'
