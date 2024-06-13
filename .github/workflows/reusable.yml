@@ -14,6 +14,6 @@ jobs:
       - name: Get Files
         uses: actions/download-artifact@v4
         with:
-          name: dist-files
+          name: ${{ inputs.artifact-namegit }}
       - name: Deploy Files
         run:  echo 'Deploying ... ...'
